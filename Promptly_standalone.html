@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promptly - Perfect AI Prompts</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* Logo Section */
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #1d4ed8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+
+    .logo-icon span {
+      font-size: 24px;
+      color: #fff;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+
+    /* Header */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #1d4ed8;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #6b7280;
+    }
+
+    /* Input Field */
+    textarea {
+      width: 100%;
+      height: 150px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 15px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      resize: none;
+      background-color: #f9fafb;
+      transition: box-shadow 0.3s;
+    }
+
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Button */
+    button {
+      display: block;
+      width: 100%;
+      background-color: #1d4ed8;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Output Section */
+    .output {
+      margin-top: 20px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      padding: 15px;
+      font-size: 1rem;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+      display: none;
+    }
+
+    /* Loading Animation */
+    .loading {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #1d4ed8;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">
+        <span>P</span>
+      </div>
+      <div class="logo-text">Promptly</div>
+    </div>
+    <h1>AI Prompt Optimizer</h1>
+    <h2>Transform your ideas into perfect prompts</h2>
+    <textarea id="userInput" placeholder="Describe your AI task here..."></textarea>
+    <button id="generatePrompt">Generate Prompt</button>
+    <div class="loading" id="loading">Processing your request...</div>
+    <div class="output" id="output"></div>
+  </div>
+  <footer>
+    &copy; 2024 Promptly. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('generatePrompt').addEventListener('click', () => {
+      const userInput = document.getElementById('userInput').value.trim();
+      const outputDiv = document.getElementById('output');
+      const loadingDiv = document.getElementById('loading');
+
+      if (!userInput) {
+        alert("Please enter a description of your AI task.");
+        return;
+      }
+
+      // Show loading indicator
+      loadingDiv.style.display = "block";
+      outputDiv.style.display = "none";
+
+      // Simulate local AI functionality using a simple optimization algorithm
+      setTimeout(() => {
+        const optimizedPrompt = `Optimized Prompt: "${userInput}. Make it clear, concise, and actionable for an AI model."`;
+
+        // Display the result
+        loadingDiv.style.display = "none";
+        outputDiv.style.display = "block";
+        outputDiv.textContent = optimizedPrompt;
+      }, 1500); // Simulate a delay for processing
+    });
+  </script>
+</body>
+</html>
